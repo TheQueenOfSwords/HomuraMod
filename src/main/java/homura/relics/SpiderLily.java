@@ -14,8 +14,8 @@ public class SpiderLily extends CustomRelic
 	}
 
 	@Override
-    public AbstractRelic makeCopy()
+	public AbstractRelic makeCopy()
 	{
-        return new SpiderLily();
-    }
+		return new SpiderLily();
+	}
 }

@@ -54,11 +54,11 @@ public class HomuraCharacter extends CustomPlayer
 	
 	public static final int ENERGY_PER_TURN = 4; /*how much energy you get every turn*/
 	
-    public static final String MY_CHARACTER_SHOULDER_2 = "images/character/shoulder2.png"; /*campfire pose*/
-    public static final String MY_CHARACTER_SHOULDER_1 = "images/character/shoulder1.png"; /*another campfire pose*/
-    public static final String MY_CHARACTER_CORPSE = "images/character/corpse.png"; /*dead corpse*/
-    public static final String MY_CHARACTER_SKELETON_ATLAS = "images/character/skeleton.atlas"; /*spine animation atlas*/
-    public static final String MY_CHARACTER_SKELETON_JSON = "images/character/skeleton.json"; /*spine animation json*/
+	public static final String MY_CHARACTER_SHOULDER_2 = "images/character/shoulder2.png"; /*campfire pose*/
+	public static final String MY_CHARACTER_SHOULDER_1 = "images/character/shoulder1.png"; /*another campfire pose*/
+	public static final String MY_CHARACTER_CORPSE = "images/character/corpse.png"; /*dead corpse*/
+	public static final String MY_CHARACTER_SKELETON_ATLAS = "images/character/skeleton.atlas"; /*spine animation atlas*/
+	public static final String MY_CHARACTER_SKELETON_JSON = "images/character/skeleton.json"; /*spine animation json*/
     
     public static final String[] orbTextures =
     	{	"images/ui/topPanel/homura/1.png",
@@ -125,7 +125,7 @@ public class HomuraCharacter extends CustomPlayer
 	public void doCharSelectScreenSelectEffect()
 	{
 		CardCrawlGame.sound.playA("MONSTER_SNECKO_GLARE", MathUtils.random(-0.1F, 0.1F));
-	    CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.SHORT, true);
+		CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.SHORT, true);
 	}
 
 	@Override
