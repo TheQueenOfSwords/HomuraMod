@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <project xmlns="http://maven.apache.org/POM/4.0.0">
     <modelVersion>4.0.0</modelVersion>
 
@@ -7,50 +6,49 @@
     <version>v0.0.1</version>
     <packaging>jar</packaging>
 
-    <name>Homura</name>
-    <description>Add Homura from Puella Magi: Madoka Magica in Slay the Spire as a new character with new cards, new relics, and familiar.</description>
+    <name>Homura Mod</name>
+    <description>Homura has been called through time and space. What is Neow plotting?</description>
 
     <dependencies>
         <dependency>
             <groupId>com.megacrit.cardcrawl</groupId>
             <artifactId>slaythespire</artifactId>
-            <version>016</version>
+            <version>051</version>
             <scope>system</scope>
             <systemPath>${basedir}/lib/desktop-1.0.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>basemod</groupId>
             <artifactId>basemod</artifactId>
-            <version>2.10.0</version>
+            <version>5.4.0</version>
             <scope>system</scope>
             <systemPath>${basedir}/lib/BaseMod.jar</systemPath>
         </dependency>
         <dependency>
-	        <groupId>com.evacipated.cardcrawl</groupId>
-		      <artifactId>ModTheSpire</artifactId>
-		      <version>2.6.0</version>
-		      <scope>system</scope>
-          <systemPath>${basedir}/lib/ModTheSpire.jar</systemPath>
-	      </dependency>
-<dependency>
-	        <groupId>com.evacipated.cardcrawl</groupId>
-		      <artifactId>StSLib</artifactId>
-		      <version>1.10.0</version>
-		      <scope>system</scope>
-          <systemPath>${basedir}/lib/StSLib.jar</systemPath>
-	      </dependency>
-<dependency>
-	        <groupId>FriendlyMinions</groupId>
-		      <artifactId>FriendlyMinions</artifactId>
-		      <version>0.0.1</version>
-		      <scope>system</scope>
-          <systemPath>${basedir}/lib/FriendlyMinions.jar</systemPath>
-	      </dependency>
+            <groupId>com.evacipated.cardcrawl</groupId>
+            <artifactId>ModTheSpire</artifactId>
+            <version>3.6.3</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/ModTheSpire.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.evacipated.cardcrawl</groupId>
+            <artifactId>stslib</artifactId>
+            <version>1.9.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/STSLib.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>stsfriendlyminions</groupId>
+			<artifactId>stsfriendlyminions</artifactId>
+			<version>0.0.1</version>
+			<scope>system</scope>
+<systemPath>${basedir}/lib/FriendlyMinions.jar</systemPath>
+	</dependency>
     </dependencies>
 
-
     <build>
-        <finalName>Homura</finalName>
+        <finalName>HomuraMod</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -70,7 +68,7 @@
                         <phase>package</phase>
                         <configuration>
                             <target>
-                                <copy file="target/Homura.jar" tofile="lib/Homura.jar"/>
+                               <copy file="target/HomuraMod.jar" 						tofile="lib/HomuraMod.jar"/>
                             </target>
                         </configuration>
                         <goals>
@@ -80,97 +78,12 @@
                 </executions>
             </plugin>
         </plugins>
-		<resources>
+        <resources>
             <resource>
-                <directory>src/main/HomuraMod/ressources</directory>            		</resource>
+                <directory>
+				src/main/resources
+			</directory>
+            </resource>
         </resources>
     </build>
-=======
-<project xmlns="http://maven.apache.org/POM/4.0.0">
-    <modelVersion>4.0.0</modelVersion>
-
-    <groupId>homura</groupId>
-    <artifactId>homura</artifactId>
-    <version>v0.0.1</version>
-    <packaging>jar</packaging>
-
-    <name>Homura</name>
-    <description>Add Homura from Puella Magi: Madoka Magica in Slay the Spire as a new character with new cards, new relics, and familiar.</description>
-
-    <dependencies>
-        <dependency>
-            <groupId>com.megacrit.cardcrawl</groupId>
-            <artifactId>slaythespire</artifactId>
-            <version>016</version>
-            <scope>system</scope>
-            <systemPath>${basedir}/lib/desktop-1.0.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>basemod</groupId>
-            <artifactId>basemod</artifactId>
-            <version>2.10.0</version>
-            <scope>system</scope>
-            <systemPath>${basedir}/lib/BaseMod.jar</systemPath>
-        </dependency>
-        <dependency>
-	        <groupId>com.evacipated.cardcrawl</groupId>
-		      <artifactId>ModTheSpire</artifactId>
-		      <version>2.6.0</version>
-		      <scope>system</scope>
-          <systemPath>${basedir}/lib/ModTheSpire.jar</systemPath>
-	      </dependency>
-<dependency>
-	        <groupId>com.evacipated.cardcrawl</groupId>
-		      <artifactId>StSLib</artifactId>
-		      <version>1.10.0</version>
-		      <scope>system</scope>
-          <systemPath>${basedir}/lib/StSLib.jar</systemPath>
-	      </dependency>
-<dependency>
-	        <groupId>FriendlyMinions</groupId>
-		      <artifactId>FriendlyMinions</artifactId>
-		      <version>0.0.1</version>
-		      <scope>system</scope>
-          <systemPath>${basedir}/lib/FriendlyMinions.jar</systemPath>
-	      </dependency>
-    </dependencies>
-
-
-    <build>
-        <finalName>Homura</finalName>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.7.0</version>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-antrun-plugin</artifactId>
-                <version>1.8</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <configuration>
-                            <target>
-                                <copy file="target/Homura.jar" tofile="lib/Homura.jar"/>
-                            </target>
-                        </configuration>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-		<resources>
-            <resource>
-                <directory>src/main/HomuraMod/ressources</directory>            		</resource>
-        </resources>
-    </build>
->>>>>>> b2e8d5023d222c9d3b1836f1ee14605c6d816dab
 </project>
