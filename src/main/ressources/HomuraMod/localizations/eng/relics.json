@@ -1,0 +1,8 @@
+{
+  "HomuraMod:SpiderLily":
+  {
+    "NAME": "Spider Lily",
+    "FLAVOR": "The ticking of the clock isn't maddening. Knowing what midnight brings is.",
+    "DESCRIPTION": ["Every 12th time you draw a curse, gain Intangible 1."]
+  }
+}
