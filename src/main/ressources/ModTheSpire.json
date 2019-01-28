@@ -1,0 +1,20 @@
+{
+  "modid": "HomuraMod",
+  "name": "Homura",
+  "author_list":
+  [
+    "Meowdoleon"
+  ],
+  "credits": "SpukyCat - Character selection background portrait",
+  "description": "Homura has been called through time and space. What is Neow plotting?",
+  "version": "0.0.1",
+  "sts_version": "01-23-2019",
+  "mts_version": "3.8.0",
+  "dependencies":
+  [
+    "basemod",
+    "stslib",
+    "Friendly_Minions_0987678"
+  ],
+  "update_json": "https://api.github.com/repos/Meowdoleon/HomuraMod/releases/latest"
+}
