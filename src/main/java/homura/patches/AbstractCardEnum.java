@@ -8,4 +8,7 @@ public class AbstractCardEnum
 {	
 	@SpireEnum
 	public static AbstractCard.CardColor PURPLE_SOUL_GEM_CHARACTER;
+
+	@SpireEnum
+	public static AbstractCard.CardRarity HOMURAMOD_UNIQUE;
 }
