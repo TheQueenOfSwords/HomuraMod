@@ -8,7 +8,6 @@
 
     <name>Homura Mod</name>
     <description>Homura has been called through time and space. What is Neow plotting?</description>
-
     <dependencies>
         <dependency>
             <groupId>com.megacrit.cardcrawl</groupId>
@@ -68,7 +67,7 @@
                         <phase>package</phase>
                         <configuration>
                             <target>
-                               <copy file="target/HomuraMod.jar" 						tofile="lib/HomuraMod.jar"/>
+                               <copy file="target/HomuraMod.jar"    tofile="lib/HomuraMod.jar"/>
                             </target>
                         </configuration>
                         <goals>
@@ -81,7 +80,7 @@
         <resources>
             <resource>
                 <directory>
-				src/main/resources
+				src/main/ressources
 			</directory>
             </resource>
         </resources>
