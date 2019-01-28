@@ -25,8 +25,8 @@ public class Strike extends CustomCard
     public Strike()
     {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-        		AbstractCard.CardType.ATTACK, AbstractCardEnum.PURPLE_SOUL_GEM_CHARACTER,
-        		AbstractCard.CardRarity.BASIC, AbstractCard.CardTarget.SELF);
+        		CardType.ATTACK, AbstractCardEnum.PURPLE_SOUL_GEM_CHARACTER,
+        		CardRarity.BASIC, CardTarget.ENEMY);
         this.baseDamage = ATTACK_DMG;
         this.tags.add(BaseModCardTags.BASIC_STRIKE);
         this.tags.add(AbstractCard.CardTags.STRIKE);
