@@ -77,3 +77,10 @@ $RECYCLE.BIN/
 
 # Spriter files
 *.autosave.scml
+
+#Class binaries
+bin/
+
+#StS Original files
+src/main/code_official
+src/main/images_official
