@@ -19,14 +19,14 @@
         <dependency>
             <groupId>basemod</groupId>
             <artifactId>basemod</artifactId>
-            <version>5.4.0</version>
+            <version>5.9.0</version>
             <scope>system</scope>
             <systemPath>${basedir}/lib/BaseMod.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.evacipated.cardcrawl</groupId>
             <artifactId>ModTheSpire</artifactId>
-            <version>3.6.3</version>
+            <version>3.8.0</version>
             <scope>system</scope>
             <systemPath>${basedir}/lib/ModTheSpire.jar</systemPath>
         </dependency>
