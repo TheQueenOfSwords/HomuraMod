@@ -40,7 +40,7 @@
         <dependency>
             <groupId>stsfriendlyminions</groupId>
 			<artifactId>stsfriendlyminions</artifactId>
-			<version>0.0.1</version>
+			<version>0.1.2</version>
 			<scope>system</scope>
 <systemPath>${basedir}/lib/FriendlyMinions.jar</systemPath>
 	</dependency>
