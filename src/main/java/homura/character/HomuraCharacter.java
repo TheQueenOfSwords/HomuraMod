@@ -7,43 +7,23 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
 
 import com.esotericsoftware.spine.AnimationState;
-import com.esotericsoftware.spine.AnimationState.TrackEntry;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
-import com.megacrit.cardcrawl.actions.GameActionManager;
-import com.megacrit.cardcrawl.audio.SoundMaster;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardColor;
-import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.characters.AbstractPlayer.PlayerClass;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
-import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
-import com.megacrit.cardcrawl.helpers.ScreenShake.ShakeDur;
-import com.megacrit.cardcrawl.helpers.ScreenShake.ShakeIntensity;
-import com.megacrit.cardcrawl.helpers.ShaderHelper;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
-import com.megacrit.cardcrawl.orbs.AbstractOrb;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import com.megacrit.cardcrawl.rooms.MonsterRoom;
-import com.megacrit.cardcrawl.rooms.RestRoom;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
-import com.megacrit.cardcrawl.vfx.combat.IntimidateEffect;
 
-import basemod.BaseMod;
 import basemod.abstracts.CustomPlayer;
-import basemod.ReflectionHacks;
 import homura.HomuraMod;
-import homura.cards.Strike;
 import homura.patches.AbstractCardEnum;
 import homura.patches.MyPlayerClassEnum;
 
@@ -51,17 +31,15 @@ public class HomuraCharacter extends CustomPlayer
 {
 	private static CharacterStrings charStrings = CardCrawlGame.languagePack.getCharacterString("Homura");
 
-	public float renderscale = 1.2F;
-	
-	public static final int ENERGY_PER_TURN = 4; /*how much energy you get every turn*/
+	private static final int ENERGY_PER_TURN = 4; /*how much energy you get every turn*/
 
-	public static final String MY_CHARACTER_SHOULDER_2 = "HomuraMod/images/characters/homura/idle/shoulder2.png"; /*campfire pose*/
-	public static final String MY_CHARACTER_SHOULDER_1 = "HomuraMod/images/characters/homura/idle/shoulder1.png"; /*another campfire pose*/
-	public static final String MY_CHARACTER_CORPSE = "HomuraMod/images/characters/homura/idle/corpse.png"; /*dead corpse*/
-	public static final String MY_CHARACTER_SKELETON_ATLAS = "HomuraMod/images/characters/homura/idle/skeleton.atlas"; /*spine animation atlas*/
-	public static final String MY_CHARACTER_SKELETON_JSON = "HomuraMod/images/characters/homura/idle/skeleton.json"; /*spine animation json*/
+	private static final String MY_CHARACTER_SHOULDER_2 = "HomuraMod/images/characters/homura/idle/shoulder2.png"; /*campfire pose*/
+	private static final String MY_CHARACTER_SHOULDER_1 = "HomuraMod/images/characters/homura/idle/shoulder1.png"; /*another campfire pose*/
+	private static final String MY_CHARACTER_CORPSE = "HomuraMod/images/characters/homura/idle/corpse.png"; /*dead corpse*/
+	private static final String MY_CHARACTER_SKELETON_ATLAS = "HomuraMod/images/characters/homura/idle/skeleton.atlas"; /*spine animation atlas*/
+	private static final String MY_CHARACTER_SKELETON_JSON = "HomuraMod/images/characters/homura/idle/skeleton.json"; /*spine animation json*/
 
-    public static final String[] orbTextures =
+    private static final String[] orbTextures =
     	{	"HomuraMod/images/ui/topPanel/homura/1.png",
     		"HomuraMod/images/ui/topPanel/homura/2.png",
     		"HomuraMod/images/ui/topPanel/homura/3.png",
@@ -77,7 +55,7 @@ public class HomuraCharacter extends CustomPlayer
     
 	public HomuraCharacter (String name, AbstractPlayer.PlayerClass setClass)
 	{
-		super(name, setClass, orbTextures, "images/vfx/orb.png", (String)null, (String)null);
+		super(name, setClass, orbTextures, "images/vfx/orb.png", null, (String)null);
 		
 		this.dialogX = (this.drawX + 0.0F * Settings.scale); /*set location for text bubbles*/
 		this.dialogY = (this.drawY + 220.0F * Settings.scale); /*you can just copy these values*/
@@ -86,7 +64,8 @@ public class HomuraCharacter extends CustomPlayer
 				MY_CHARACTER_SHOULDER_1,
 				MY_CHARACTER_CORPSE, 
 				getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(ENERGY_PER_TURN));
-		
+
+		float renderscale = 1.2F;
 		loadAnimation(MY_CHARACTER_SKELETON_ATLAS, MY_CHARACTER_SKELETON_JSON, renderscale); // if you're using modified versions of base game animations or made animations in spine make sure to include this bit and the following lines
 		
 		AnimationState.TrackEntry e = this.state.setAnimation(0, "Idle", true);
@@ -108,11 +87,11 @@ public class HomuraCharacter extends CustomPlayer
 		return retVal;
 	}
 	
-        public static final int STARTING_HP = 50;
-        public static final int MAX_HP = 50;
-        public static final int STARTING_GOLD = 99;
-        public static final int HAND_SIZE = 6;
-        public static final int ORB_SLOTS = 0;
+        private static final int STARTING_HP = 50;
+        private static final int MAX_HP = 50;
+        private static final int STARTING_GOLD = 99;
+        private static final int HAND_SIZE = 6;
+        private static final int ORB_SLOTS = 0;
 
 	public CharSelectInfo getLoadout()  /*the rest of the character loadout so includes your character select screen info plus hp and starting gold*/
 	{
