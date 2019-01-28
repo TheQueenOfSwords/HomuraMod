@@ -3,6 +3,6 @@
   {
     "NAME": "Spider Lily",
     "FLAVOR": "The ticking of the clock isn't maddening. Knowing what midnight brings is.",
-    "DESCRIPTIONS": ["Every 12th time you draw a curse, gain Intangible 1."]
+    "DESCRIPTIONS": ["Every #b12th time you draw a #yCurse, gain #yIntangible #b1."]
   }
 }
