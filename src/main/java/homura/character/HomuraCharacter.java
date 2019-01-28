@@ -52,24 +52,24 @@ public class HomuraCharacter extends CustomPlayer
 	
 	public static final int ENERGY_PER_TURN = 4; /*how much energy you get every turn*/
 	
-	public static final String MY_CHARACTER_SHOULDER_2 = "images/character/shoulder2.png"; /*campfire pose*/
-	public static final String MY_CHARACTER_SHOULDER_1 = "images/character/shoulder1.png"; /*another campfire pose*/
-	public static final String MY_CHARACTER_CORPSE = "images/character/corpse.png"; /*dead corpse*/
-	public static final String MY_CHARACTER_SKELETON_ATLAS = "images/character/skeleton.atlas"; /*spine animation atlas*/
-	public static final String MY_CHARACTER_SKELETON_JSON = "images/character/skeleton.json"; /*spine animation json*/
+	public static final String MY_CHARACTER_SHOULDER_2 = "HomuraMod/images/characters/homura/idle/shoulder2.png"; /*campfire pose*/
+	public static final String MY_CHARACTER_SHOULDER_1 = "HomuraMod/images/characters/homura/idle/shoulder1.png"; /*another campfire pose*/
+	public static final String MY_CHARACTER_CORPSE = "HomuraMod/images/characters/homura/idle/corpse.png"; /*dead corpse*/
+	public static final String MY_CHARACTER_SKELETON_ATLAS = "HomuraMod/images/characters/homura/idle/skeleton.atlas"; /*spine animation atlas*/
+	public static final String MY_CHARACTER_SKELETON_JSON = "HomuraMod/images/characters/homura/idle/skeleton.json"; /*spine animation json*/
     
     public static final String[] orbTextures =
-    	{	"images/ui/topPanel/homura/1.png",
-    		"images/ui/topPanel/homura/2.png",
-    		"images/ui/topPanel/homura/3.png",
-    		"images/ui/topPanel/homura/4.png",
-    		"images/ui/topPanel/homura/5.png",
-    		"images/ui/topPanel/homura/border.png",
-    		"images/ui/topPanel/homura/1d.png",
-    		"images/ui/topPanel/homura/2d.png",
-    		"images/ui/topPanel/homura/3d.png",
-    		"images/ui/topPanel/homura/4d.png",
-    		"images/ui/topPanel/homura/5d.png" 
+    	{	"HomuraMod/images/ui/topPanel/homura/1.png",
+    		"HomuraMod/images/ui/topPanel/homura/2.png",
+    		"HomuraMod/images/ui/topPanel/homura/3.png",
+    		"HomuraMod/images/ui/topPanel/homura/4.png",
+    		"HomuraMod/images/ui/topPanel/homura/5.png",
+    		"HomuraMod/images/ui/topPanel/homura/border.png",
+    		"HomuraMod/images/ui/topPanel/homura/1d.png",
+    		"HomuraMod/images/ui/topPanel/homura/2d.png",
+    		"HomuraMod/images/ui/topPanel/homura/3d.png",
+    		"HomuraMod/images/ui/topPanel/homura/4d.png",
+    		"HomuraMod/images/ui/topPanel/homura/5d.png"
     	};
     
 	public HomuraCharacter (String name, AbstractPlayer.PlayerClass setClass)
@@ -86,7 +86,7 @@ public class HomuraCharacter extends CustomPlayer
 		
 		loadAnimation(MY_CHARACTER_SKELETON_ATLAS, MY_CHARACTER_SKELETON_JSON, renderscale); // if you're using modified versions of base game animations or made animations in spine make sure to include this bit and the following lines
 		
-		AnimationState.TrackEntry e = this.state.setAnimation(0, "animation", true);
+		AnimationState.TrackEntry e = this.state.setAnimation(0, "Idle", true);
 		e.setTime(e.getEndTime() * MathUtils.random());
 	}
 
@@ -114,7 +114,7 @@ public class HomuraCharacter extends CustomPlayer
 	public CharSelectInfo getLoadout()  /*the rest of the character loadout so includes your character select screen info plus hp and starting gold*/
 	{
 		return new CharSelectInfo("Homura",
-				"Homura is a time-traveler who stumbled upon Neow territory. Harness the power of curses and despair.",
+				"Homura is a time-traveler who stumbled upon Neow territory. NL Harness the power of curses and despair.",
 				STARTING_HP, MAX_HP, ORB_SLOTS, STARTING_GOLD, HAND_SIZE,
 			this, getStartingRelics(), getStartingDeck(), false);
 	}
@@ -165,7 +165,7 @@ public class HomuraCharacter extends CustomPlayer
 	@Override
 	public String getLocalizedCharacterName()
 	{
-		return name;
+		return "Homura";
 	}
 
 	@Override

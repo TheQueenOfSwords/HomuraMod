@@ -10,7 +10,7 @@ public class SpiderLily extends CustomRelic
 {
 	public SpiderLily()
 	{
-		super("HomuraMod:SpiderLily", new Texture("images/relics/bloom.png"), RelicTier.STARTER, LandingSound.MAGICAL);
+		super("HomuraMod:SpiderLily", new Texture("HomuraMod/images/relics/bloom.png"), RelicTier.STARTER, LandingSound.MAGICAL);
 	}
 
 	@Override
