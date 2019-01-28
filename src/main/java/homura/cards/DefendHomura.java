@@ -28,7 +28,7 @@ public class DefendHomura extends CustomCard
 	{
 		super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
 				CardType.SKILL, AbstractCardEnum.PURPLE_SOUL_GEM_CHARACTER,
-				CardRarity.BASIC, CardTarget.ENEMY);
+				CardRarity.BASIC, CardTarget.SELF);
 		this.baseBlock = BLOCK;
 		this.tags.add(BaseModCardTags.BASIC_DEFEND);
 	}
