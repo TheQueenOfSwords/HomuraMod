@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 
 import com.badlogic.gdx.graphics.Color;
@@ -71,8 +72,9 @@ public class HomuraMod implements EditCardsSubscriber, EditCharactersSubscriber,
 		if (Settings.language == Settings.GameLanguage.KOR) language = "kor";
 		if (Settings.language == Settings.GameLanguage.JPN) language = "jpn";
 
-		BaseMod.loadCustomStringsFile(CardStrings.class, "HomuraMod/localization/"+ language +"/cards.json");
-		BaseMod.loadCustomStringsFile(RelicStrings.class, "HomuraMod/localization/"+ language +"/relics.json");
+		BaseMod.loadCustomStringsFile(CardStrings.class, "HomuraMod/localization/"+ language + "/cards.json");
+		BaseMod.loadCustomStringsFile(RelicStrings.class, "HomuraMod/localization/"+ language + "/relics.json");
+		BaseMod.loadCustomStringsFile(CharacterStrings.class, "HomuraMod/localization/" + language + "/character.json");
 	}
 
 	public void receiveEditCharacters()

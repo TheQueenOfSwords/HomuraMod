@@ -30,6 +30,7 @@ import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.helpers.ScreenShake.ShakeDur;
 import com.megacrit.cardcrawl.helpers.ScreenShake.ShakeIntensity;
 import com.megacrit.cardcrawl.helpers.ShaderHelper;
+import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoom;
@@ -47,17 +48,19 @@ import homura.patches.AbstractCardEnum;
 import homura.patches.MyPlayerClassEnum;
 
 public class HomuraCharacter extends CustomPlayer
-{	
+{
+	private static CharacterStrings charStrings = CardCrawlGame.languagePack.getCharacterString("Homura");
+
 	public float renderscale = 1.2F;
 	
 	public static final int ENERGY_PER_TURN = 4; /*how much energy you get every turn*/
-	
+
 	public static final String MY_CHARACTER_SHOULDER_2 = "HomuraMod/images/characters/homura/idle/shoulder2.png"; /*campfire pose*/
 	public static final String MY_CHARACTER_SHOULDER_1 = "HomuraMod/images/characters/homura/idle/shoulder1.png"; /*another campfire pose*/
 	public static final String MY_CHARACTER_CORPSE = "HomuraMod/images/characters/homura/idle/corpse.png"; /*dead corpse*/
 	public static final String MY_CHARACTER_SKELETON_ATLAS = "HomuraMod/images/characters/homura/idle/skeleton.atlas"; /*spine animation atlas*/
 	public static final String MY_CHARACTER_SKELETON_JSON = "HomuraMod/images/characters/homura/idle/skeleton.json"; /*spine animation json*/
-    
+
     public static final String[] orbTextures =
     	{	"HomuraMod/images/ui/topPanel/homura/1.png",
     		"HomuraMod/images/ui/topPanel/homura/2.png",
@@ -113,10 +116,9 @@ public class HomuraCharacter extends CustomPlayer
 
 	public CharSelectInfo getLoadout()  /*the rest of the character loadout so includes your character select screen info plus hp and starting gold*/
 	{
-		return new CharSelectInfo("Homura",
-				"Homura is a time-traveler who stumbled upon Neow territory. NL Harness the power of curses and despair.",
+		return new CharSelectInfo(getLocalizedCharacterName(), charStrings.TEXT[0],
 				STARTING_HP, MAX_HP, ORB_SLOTS, STARTING_GOLD, HAND_SIZE,
-			this, getStartingRelics(), getStartingDeck(), false);
+				this, getStartingRelics(), getStartingDeck(), false);
 	}
 
 	@Override
@@ -165,7 +167,7 @@ public class HomuraCharacter extends CustomPlayer
 	@Override
 	public String getLocalizedCharacterName()
 	{
-		return "Homura";
+		return charStrings.NAMES[1];
 	}
 
 	@Override
@@ -209,5 +211,4 @@ public class HomuraCharacter extends CustomPlayer
 		// TODO Auto-generated method stub
 		return new HomuraCharacter(CardCrawlGame.playerName, MyPlayerClassEnum.HOMURA_CLASS);
 	}
-	
 }
