@@ -195,9 +195,9 @@ public class HomuraCharacter extends CustomPlayer
 	}
 
 	@Override
-	public String getTitle(PlayerClass arg0) {
-		// TODO Auto-generated method stub
-		return null;
+	public String getTitle(PlayerClass arg0)
+	{
+		return charStrings.NAMES[0];
 	}
 
 	@Override
