@@ -16,21 +16,17 @@ import basemod.interfaces.*;
 
 import static homura.patches.AbstractCardEnum.PURPLE_SOUL_GEM_CHARACTER;
 
-import homura.cards.Strike;
+import homura.cards.*;
 import homura.character.HomuraCharacter;
 import homura.patches.AbstractCardEnum;
 import homura.patches.MyPlayerClassEnum;
-import homura.relics.SpiderLily;
+import homura.relics.*;
 
 @SpireInitializer
 public class HomuraMod implements EditCardsSubscriber, EditCharactersSubscriber, EditRelicsSubscriber, EditStringsSubscriber
 {
 	public static final Color PURPLE_SOUL_GEM = CardHelper.getColor(179.0f, 119.0f, 171.0f);
 	public static final Color GOLD = CardHelper.getColor(255.0f, 215.0f, 0.0f);
-	
-	public static final String MODNAME = "Homura"; /*mod name*/
-	public static final String AUTHOR = "Meowdoleon"; /*your name*/
-	public static final String DESCRIPTION = "v0.0.1 - Homura (dev testing)"; /*description*/
 	
 	private static final String attackCard = "HomuraMod/images/cardui/512/bg_attack_purple.png"; /*Attack card bg*/
 	private static final String skillCard = "HomuraMod/images/cardui/512/bg_skill_purple.png"; /*Skill card bg*/
@@ -90,6 +86,7 @@ public class HomuraMod implements EditCardsSubscriber, EditCharactersSubscriber,
 	
 	public void receiveEditCards()
 	{
-		BaseMod.addCard(new Strike());
+		BaseMod.addCard(new StrikeHomura());
+		BaseMod.addCard(new DefendHomura());
 	}
 }

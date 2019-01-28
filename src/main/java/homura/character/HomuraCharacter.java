@@ -76,6 +76,14 @@ public class HomuraCharacter extends CustomPlayer
 	{
 		ArrayList<String> retVal = new ArrayList<>();
 		retVal.add("HomuraMod:Strike");
+		retVal.add("HomuraMod:Strike");
+		retVal.add("HomuraMod:Strike");
+		retVal.add("HomuraMod:Strike");
+		retVal.add("HomuraMod:Strike");
+		retVal.add("HomuraMod:Defend");
+		retVal.add("HomuraMod:Defend");
+		retVal.add("HomuraMod:Defend");
+		retVal.add("HomuraMod:Defend");
 		return retVal;
 	}
 	
